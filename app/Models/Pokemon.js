@@ -14,6 +14,7 @@ export default class Pokemon {
       <h4 class="card-title">${this.name}</h4>
       <p class="card-text">Type ${this.type}</p>
       <p class="card-text">Weight: ${this.weight}</p>
+      <p class="card-text">Image: <img src="${this.img}"></p>
       ${this.Button}
     </div>
     `
