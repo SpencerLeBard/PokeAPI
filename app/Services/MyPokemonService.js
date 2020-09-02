@@ -17,12 +17,12 @@ class MyPokemonService {
   }
   async removePokemon() {
     await sandboxApi.delete(ProxyState.activePokemon.id)
-    ProxyState.myPokemon = ProxyState.myPokemonfilter(p => p.id != ProxyState.activePokemon.id)
+    ProxyState.myPokemon = ProxyState.myPokemon.filter(p => p.id != ProxyState.activePokemon.id)
     ProxyState.activePokemon = null
 
   }
 
 }
 
-const mySpellsService = new MyPokemonService()
-export default mySpellsService
+const myPokemonService = new MyPokemonService()
+export default myPokemonService

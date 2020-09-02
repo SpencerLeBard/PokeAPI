@@ -1,10 +1,10 @@
 export default class Pokemon {
     constructor(_id, name, front_default, weight, type) {
         this.id = _id,
-            this.name = name,
             this.front_default = front_default,
             this.weight = weight,
-            this.type = type
+            this.type = type,
+            this.name = name
     }
 
 
@@ -21,8 +21,8 @@ export default class Pokemon {
     }
     get Button() {
         if (this.id) {
-            return `<button onclick="app.mySpellsController.removeSpell()" class="btn btn-danger">Remove</button>`
+            return `<button onclick="app.myPokemonController.removePokemon()" class="btn btn-danger">Remove</button>`
         }
-        return `<button onclick="app.mySpellsController.addSpell()" class="btn btn-success">Add Spell</button>`
+        return `<button onclick="app.myPokemonController.addPokemon()" class="btn btn-success">Add Pokemon</button>`
     }
 } 

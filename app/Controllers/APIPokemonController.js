@@ -1,10 +1,10 @@
 import { ProxyState } from "../AppState.js";
-import APIPokemonService from "../Services/APIPokemonService.js";
+import apiPokemonService from "../Services/apiPokemonService.js";
 
 function _drawApiPokemon() {
   let pokemon = ProxyState.apiPokemon
   let template = ''
-  pokemon.forEach(s => template += `<li onclick="app.apiPokemonController.getDetails('${s.index}')">${s.name}</li>`)
+  pokemon.forEach(s => template += `<li onclick="app.APIPokemonController.getDetails('${s.index}')">${s.name}</li>`)
   document.getElementById('api-pokemon').innerHTML = template
 }
 
@@ -16,15 +16,15 @@ export default class APIPokemonController {
 
   getAllApiPokemon() {
     try {
-      APIPokemonService.getAll()
+      apiPokemonService.getAll()
     } catch (error) {
       console.error(error)
     }
   }
 
-  getDetails(index) {
+  getDetails(name) {
     try {
-      APIPokemonService.getDetails(index)
+      apiPokemonService.getDetails(name)
     } catch (error) {
       console.error(error)
     }
