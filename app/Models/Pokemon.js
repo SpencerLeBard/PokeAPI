@@ -1,9 +1,10 @@
 export default class Pokemon {
-    constructor({ id, _id, name, weight, type }) {
+    constructor({ _id, name, weight, type, img, sprites }) {
         this.weight = weight
-        this.id = id || _id
+        this.id = _id
         this.name = name
         this.type = type
+        this.img = img || sprites.front_default
     }
 
 
