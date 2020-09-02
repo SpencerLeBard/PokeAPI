@@ -8,11 +8,11 @@ class MyPokemonService {
 
   }
   async getMyPokemon() {
-    let res = await sandboxApi.get('')
+    let res = await sandboxApi.get("")
     ProxyState.myPokemon = res.data.data.map(s => new Pokemon(s))
   }
   async addPokemon() {
-    let res = await sandboxApi.post('', ProxyState.activePokemon)
+    let res = await sandboxApi.post("", ProxyState.activePokemon)
     ProxyState.myPokemon = [...ProxyState.myPokemon, new Pokemon(res.data.data)]
   }
   async removePokemon() {

@@ -1,10 +1,9 @@
 export default class Pokemon {
-    constructor(_id, name, front_default, weight, type) {
-        this.id = _id,
-            this.front_default = front_default,
-            this.weight = weight,
-            this.type = type,
-            this.name = name
+    constructor({ id, _id, name, weight, type }) {
+        this.weight = weight
+        this.id = id || _id
+        this.name = name
+        this.type = type
     }
 
 
@@ -12,9 +11,8 @@ export default class Pokemon {
         return `
     <div class="card-body">
       <h4 class="card-title">${this.name}</h4>
-      <p class="card-text">Components: ${this.type}</p>
-      <p class="card-text">Range: ${this.weight}</p>
-      <p class="card-text">Duration: ${this.front_default}</p>
+      <p class="card-text">Type ${this.type}</p>
+      <p class="card-text">Weight: ${this.weight}</p>
       ${this.Button}
     </div>
     `
